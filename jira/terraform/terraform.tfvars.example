@@ -1,0 +1,28 @@
+# AWS Configuration
+aws_region = "us-east-1"
+
+# S3 Configuration
+s3_bucket_name = "your-company-exports"
+s3_prefix     = "project-exports/"
+
+# Lambda Configuration
+lambda_function_name = "jira-csv-exporter"
+
+# JIRA Configuration (sensitive values - set these in your actual terraform.tfvars file)
+jira_url       = "https://your-domain.atlassian.net"
+jira_username  = "your-email@company.com"
+jira_api_token = "your-api-token"
+
+# Schedule Configuration
+schedule_expression = "cron(0 23 ? * SUN *)"  # Every Sunday at 23:00 UTC (Monday 8:00 JST)
+
+# Environment
+environment = "dev"
+
+# Tags
+tags = {
+  Project     = "JIRA-S3-Export"
+  Environment = "dev"
+  ManagedBy   = "Terraform"
+  Owner       = "YourTeam"
+}
